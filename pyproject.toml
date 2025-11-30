@@ -1,0 +1,57 @@
+[project]
+name = "poster-analyzer"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "corgi-in-tights",email = "59304120+corgi-in-tights@users.noreply.github.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "easyocr (>=1.7.2,<2.0.0)",
+    "pillow (>=12.0.0,<13.0.0)"
+]
+
+[project.urls]
+homepage = "https://github.com/corgi-in-tights/poster-analyzer"
+repository = "https://github.com/corgi-in-tights/poster-analyzer"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.setuptools.packages.find]
+include = ["poster_analyzer", "poster_analyzer.*"]
+
+[tool.poetry]
+packages = [
+    { include = "poster_analyzer" }
+]
+  
+# ==== ruff ====
+[tool.ruff]
+line-length = 119
+target-version = "py312"
+extend-exclude = [
+    "*/migrations/*.py",
+    "staticfiles/*",
+    "examples/*",
+]
+
+[tool.ruff.lint]
+select = [
+  "F", "E", "W", "C90", "I", "N", "UP", "YTT",
+  "ASYNC", "S", "BLE", "FBT", "B", "A", "COM", "C4",
+  "DTZ", "T10", "DJ", "EM", "EXE", "FA", "ISC", "ICN",
+  "G", "INP", "PIE", "T20", "PYI", "PT", "Q", "RSE", "RET",
+  "SLF", "SLOT", "SIM", "TID", "TC", "INT", "PTH", "ERA",
+  "PD", "PGH", "PL", "TRY", "FLY", "PERF", "RUF"
+]
+ignore = [
+  "S101",     # Use of assert detected
+  "RUF012",   # Mutable class attributes without typing.ClassVar
+  "SIM102",   # Allow nested ifs sometimes
+  "UP038"     # isinstance tuple perf issue
+]
+extend-unsafe-fixes = ["UP038"]

@@ -1,6 +1,5 @@
-from .app import analyze_image, get_text_bounding_boxes
+from .app import recognize_all_components
 
 __all__ = [
-    "analyze_image",
-    "get_text_bounding_boxes",
+    "recognize_all_components",
 ]

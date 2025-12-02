@@ -1,3 +1,3 @@
-from poster_analyzer import analyze_image
+from poster_analyzer import recognize_all_components
 
-print(analyze_image("examples/assets/sample_poster.png"))
+print(recognize_all_components("examples/assets/sample_poster.png"))
